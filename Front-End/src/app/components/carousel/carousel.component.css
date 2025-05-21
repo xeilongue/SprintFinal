@@ -1,0 +1,72 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prevBtn {
+    width: 3vw;
+    height: 6vh;
+    opacity: 70%;
+    background-image: url("/icons/fast-forwardvolta.png");
+    background-size: cover;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+.nextBtn {
+    width: 3vw;
+    height: 6vh;
+    opacity: 70%;
+    background-image: url("/icons/fast-forward.png");
+    background-size: cover;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+#carousel {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-height: 628px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-align: center;
+}
+
+#carousel h1 {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#carousel a {
+    text-decoration: none;
+}
+
+#carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media all and (max-width: 978px) {
+    .home {
+        display: flex;
+        width: 100%;
+    }
+
+    .prevBtn {
+        width: 10vw;
+    }
+    
+    .nextBtn {
+        width: 10vw;
+    }
+}

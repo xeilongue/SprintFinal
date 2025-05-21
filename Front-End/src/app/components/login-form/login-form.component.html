@@ -1,0 +1,47 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="login-form">
+    
+    <div class="div__img__logo">
+        <img class="img__logo" src="ford-logo.svg">
+    </div>
+
+    <h2 class="login__title">ENTRAR</h2>
+
+    <div class="login__inputs">
+        <!-- Input de e-mail -->
+        <div class="input-icon-wrapper">
+            <img src="/icons/user.png" class="input-icon" />
+            <input formControlName="nome" type="text" id="nome" placeholder="E-mail" required />
+        </div>
+
+        <!-- Input de senha -->
+        <div class="input-icon-wrapper">
+            <img src="/icons/padlock.png" class="input-icon" />
+            <input formControlName="senha" type="password" id="senha" placeholder="Senha" required />
+        </div>
+
+        <div class="forgot-password-wrapper">
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
+        </div>
+    </div>
+
+    <!-- Checkbox "Mantenha-me conectado" -->
+    <div class="login__remember">
+        <input type="checkbox" id="rememberMe" />
+        <label for="rememberMe">Mantenha-me conectado</label>
+    </div>
+
+    <!-- Checkbox "Termos de Uso" -->
+    <div class="login__terms">
+        <input type="checkbox" id="terms" required />
+        <label for="terms">
+            Concordo com os <a href="#" target="_blank">Termos de Uso e Serviços</a>
+        </label>
+    </div>
+
+
+    <button class="button__login" type="submit">Entrar</button>
+
+    <hr class="divider" />
+    <p class="no-account">Não tem uma conta?</p>
+    <button class="button__create" type="button">Criar conta</button>
+</form>

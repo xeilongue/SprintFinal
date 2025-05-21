@@ -1,0 +1,104 @@
+<app-header></app-header>
+
+<main class="container__lancamento">
+    <div>
+        <iframe class="videozinho"
+            src="https://www.youtube-nocookie.com/embed/vQsryuNmsL0?controls=0&autoplay=1&modestbranding=0&loop=1&mute=1&rel=0&hd=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    
+    <table>
+        <tr>
+            <td *ngFor="let car of cars">
+                <div class="td__conteudo">
+                    <input type="checkbox" class="checkbox__comparar" (change)="setCarToCompare($event, car)">
+                    <img [src]="car.image" class="imagem__carro">
+                </div>
+                <div class="info__container">
+                    <div class="info__text">
+                        <span class="nome__produto">{{car.nome}}</span>
+                        <span class="td__descricao__produto">Preço Sugerido: R$ {{car.preco | number:'1.0-0'}}</span>
+                    </div>
+                    <img class="botao__info" src="icons/info.png">
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <button type="button" class="botao__comparar" (click)="showCompare()">Comparar Carros</button>
+
+    <!-- Dialog de comparação -->
+    <dialog [open]="isCompareVisible">
+        <table *ngIf="selectedCars.length === 2">
+            <tbody>
+                <tr>
+                    <td>Imagem</td>
+                    <td>
+                        <img [src]="selectedCars[0].image" alt="">
+                    </td>
+                    <td>
+                        <img [src]="selectedCars[1].image" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Modelo</td>
+                    <td>{{selectedCars[0].nome}}</td>
+                    <td>{{selectedCars[1].nome}}</td>
+                </tr>
+                <tr>
+                    <td>Altura da caçamba (mm)</td>
+                    <td>{{selectedCars[0].alturaCacamba}}</td>
+                    <td>{{selectedCars[1].alturaCacamba}}</td>
+                </tr>
+                <tr>
+                    <td>Altura do veículo (mm)</td>
+                    <td>{{selectedCars[0].alturaVeiculo}}</td>
+                    <td>{{selectedCars[1].alturaVeiculo}}</td>
+                </tr>
+                <tr>
+                    <td>Altura livre do solo (mm)</td>
+                    <td>{{selectedCars[0].alturaSolo}}</td>
+                    <td>{{selectedCars[1].alturaSolo}}</td>
+                </tr>
+                <tr>
+                    <td>Capacidade de carga (Kg)</td>
+                    <td>{{selectedCars[0].capacidadeCarga}}</td>
+                    <td>{{selectedCars[1].capacidadeCarga}}</td>
+                </tr>
+                <tr>
+                    <td>Motor</td>
+                    <td>{{selectedCars[0].motor}}</td>
+                    <td>{{selectedCars[1].motor}}</td>
+                </tr>
+                <tr>
+                    <td>Potência (cv)</td>
+                    <td>{{selectedCars[0].potencia}}</td>
+                    <td>{{selectedCars[1].potencia}}</td>
+                </tr>
+                <tr>
+                    <td>Volume de caçamba (L)</td>
+                    <td>{{selectedCars[0].volumeCacamba}}</td>
+                    <td>{{selectedCars[1].volumeCacamba}}</td>
+                </tr>
+                <tr>
+                    <td>Roda</td>
+                    <td>{{selectedCars[0].roda}}</td>
+                    <td>{{selectedCars[1].roda}}</td>
+                </tr>
+                <tr>
+                    <td>Preço</td>
+                    <td>R$ {{selectedCars[0].preco | number:'1.0-0'}}</td>
+                    <td>R$ {{selectedCars[1].preco | number:'1.0-0'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align: center;padding-bottom: 20px;">
+            <button type="button" style="height: 40px; width: 200px;" (click)="closeCompare()">Fechar</button>
+        </div>
+    </dialog>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<main>
+    <div class="forms" #formsSection>
+        <div>
+            <img src="xls 2.2 diesel.jpg">
+        </div>
+        <div>
+            <h2 class="titulo">Sobre Você</h2>
+            <form (ngSubmit)="submitForm()">
+
+                <input type="text" name="nome" placeholder="NOME *" class="fordform" required
+                    [(ngModel)]="formData.nome">
+
+                <input type="email" name="email" placeholder="E-MAIL *" class="fordform" required
+                    [(ngModel)]="formData.email">
+
+                <input type="text" name="cpf" placeholder="CPF *" class="fordform" required [(ngModel)]="formData.cpf"
+                    mask="000.000.000-00">
+
+                <input type="text" name="sobrenome" placeholder="SOBRENOME *" class="fordform" required
+                    [(ngModel)]="formData.sobrenome">
+
+                <input type="text" name="telefone" placeholder="TELEFONE *" class="fordform" required
+                    [(ngModel)]="formData.telefone" mask="(00) 00000-0000">
+
+                <!-- Removed duplicate telephone input -->
+
+                <select name="contato" class="fordform" required [(ngModel)]="formData.contatoPreferido">
+                    <option disabled selected>COMO DESEJA SER CONTATADO*</option>
+                    <option>TELEFONE</option>
+                    <option>E-MAIL</option>
+                </select>
+
+                <textarea id="mensagem" name="mensagem" class="fordform" placeholder="MENSAGEM *" required
+                    [(ngModel)]="formData.mensagem"></textarea>
+
+                <select id="contato" name="tipoMensagem" class="fordform" required [(ngModel)]="formData.tipoMensagem">
+                    <option disabled selected>TIPO DA MENSAGEM*</option>
+                    <option value="elogio">ELOGIO</option>
+                    <option value="reclamacao">RECLAMAÇÃO</option>
+                    <option value="solicitacao">SOLICITAÇÃO</option>
+                </select>
+
+                <section class="checkboxcontato">
+                    <p class="termos">
+                        Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer
+                        momento será possível editar ou remover tais dados. <a
+                            href="https://www.ford.com.br/politica-de-privacidade/" target="_blank"
+                            (mouseover)="addMouseoverEffect($event)" (mouseout)="removeMouseoverEffect($event)">Termos e
+                            Condições</a>
+                    </p>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkboxtermos" [(ngModel)]="formData.aceitaTermos"
+                            name="aceitaTermos">
+                        <p>Sim, li e concordo com os vossos termos.<span style="font-weight: 800;">*</span></p>
+                    </div>
+
+                    <div class="checkbox">
+                        <input type="checkbox" [(ngModel)]="formData.receberNovidades" name="receberNovidades">
+                        <p>Sim, também quero receber descontos e novidades.</p>
+                    </div>
+                </section>
+
+                <button type="submit" [disabled]="!formData.aceitaTermos" id="botaocontato"
+                    [ngStyle]="{'opacity': formData.aceitaTermos ? '1' : '0.3'}"
+                    (mouseover)="addMouseoverEffectBtn($event)"
+                    (mouseout)="removeMouseoverEffectBtn($event)">Enviar</button>
+
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+<app-footer></app-footer>
+</footer>

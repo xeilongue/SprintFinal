@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar__container">
+        <div class="navbar__left">
+            <app-menu></app-menu>
+
+            <img class="navbar__logo" src="ford.png" alt="Ford Logo" />
+        </div>
+
+        <div class="navbar__links">
+            <a class="navbar__link" routerLink="/home" routerLinkActive="active">Home</a>
+            <a class="navbar__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+            <a class="navbar__link" routerLink="/lancamento" routerLinkActive="active">Lançamento</a>
+            <a class="navbar__link" routerLink="/contato" routerLinkActive="active">Contato</a>
+        </div>
+
+        <button (click)="logout()" class="button__logout"></button>
+    </div>
+</nav>

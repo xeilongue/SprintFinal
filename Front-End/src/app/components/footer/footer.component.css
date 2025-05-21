@@ -1,0 +1,69 @@
+.footer {
+    display: flex;
+    margin-top: auto;
+    width: 100vw;
+    height: 4.8vh;
+    bottom: 0%;
+    background-color: #1b357e;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.7% 0%;
+}
+
+.footer>* {
+    margin: 0px 30px;
+}
+
+.footer__redes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__redes__h2 {
+    font-size: 2.4vh;
+    color: white;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+}
+
+.footer__redes__img {
+    cursor: pointer;
+    height: 30px;
+    width: auto;
+}
+
+.footer__logo {
+    height: 4vh;
+    width: auto;
+}
+
+/* Add this at the end of your existing CSS */
+
+/* RESPONSIVIDADE */
+@media all and (max-width: 978px) {
+    .footer__redes__h2 {
+        font-size: 2.3vh;
+        width: 15vh;
+    }
+
+    .footer__redes__img {
+        display: flex;
+        width: 4.5vh;
+    }
+
+    .footer__logo {
+        height: 4vh;
+    }
+}
+
+.footer {
+    width: 100vw;
+    /* Remove margin-top: auto if present, let flexbox handle it */
+    margin-top: 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}

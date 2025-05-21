@@ -1,0 +1,10 @@
+<main class="home">
+    <button class="prevBtn" (click)="backButton()"></button>
+    <div id="carousel">
+        <a [href]="content[currentIndex].url">
+            <img [src]="content[currentIndex].img" alt="Ford carousel image">
+        </a>
+        <h1>{{ content[currentIndex].title }}</h1>
+    </div>
+    <button class="nextBtn" (click)="nextButton()"></button>
+</main>

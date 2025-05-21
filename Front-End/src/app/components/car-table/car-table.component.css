@@ -1,0 +1,90 @@
+.table-container {
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: var(--white);
+    width: 80%;
+    min-height: 120px; /* Define uma altura mínima para a tabela */
+    justify-self: center;
+}
+
+.car-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--main-font);
+    table-layout: fixed; /* Mantém o layout da tabela fixo */
+}
+
+.car-table th {
+    background-color: var(--blue-principal);
+    color: white;
+    text-align: left;
+    padding: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    width: 16.66%; /* Distribui igualmente as 6 colunas */
+    white-space: nowrap; /* Evita quebra de linha nos títulos */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.car-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    height: 40px; /* Altura fixa para as células */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.car-table tr:last-child td {
+    border-bottom: none;
+}
+
+.car-table input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--main-font);
+}
+
+.car-table input:focus {
+    outline: none;
+    border-color: var(--blue-principal);
+    box-shadow: 0 0 0 2px rgba(0, 69, 130, 0.2);
+}
+
+/* Efeito hover nas linhas */
+.car-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsividade */
+@media (max-width: 978px) {
+    .table-container {
+        overflow-x: auto;
+    }
+    .car-table {
+        min-width: 400px;
+        font-size: 0.95rem;
+    }
+    .car-table input[type="text"] {
+        width: 70px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .car-table {
+        min-width: 350px;
+        font-size: 0.85rem;
+    }
+    .car-table input[type="text"] {
+        width: 60px;
+    }
+}

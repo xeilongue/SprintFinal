@@ -1,0 +1,59 @@
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas-start {
+    height: 100vh !important;
+    width: 240px !important;
+}
+
+.menu__button {
+    background-image: url("/icons/more.png");
+    width: 3vh;
+    height: 3vh;
+    margin-left: 0.5vh;
+    margin-top: 0.5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: #ffff;
+}
+
+.menu {
+    width: 10vw;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.link {
+    padding: 12px 20px;
+    color: var(--blue-principal);
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-weight: 500;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Esconde o menu e botão em telas grandes */
+.mobile-only {
+    display: none !important;
+}
+
+/* Mostra apenas em telas pequenas (ex: até 768px) */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block !important;
+    }
+}

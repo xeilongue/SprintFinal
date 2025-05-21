@@ -1,0 +1,39 @@
+
+
+.card__title {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    font-size: 1.5rem;
+    padding: 2vh;
+    background-color: #f7f7f7;
+}
+
+.card__content {
+    padding: 1vh 2vh;
+}
+
+.card__content>* {
+    margin: 0;
+}
+
+.card__content__number {
+    color: var(--blue);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.card {
+    min-width: 220px;
+    max-width: 300px;
+    flex: 0 0 auto;
+    margin: 8px;
+    /* Optional: for better appearance on mobile */
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .card {
+        min-width: 160px;
+        max-width: 220px;
+        margin: 4px;
+    }
+}

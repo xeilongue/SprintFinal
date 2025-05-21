@@ -1,0 +1,93 @@
+.navbar {
+    width: 100%;
+    background-color: var(--white);
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    height: 60px;
+    justify-content: space-between;
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.navbar__left {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.navbar__logo {
+    height: 4vh;
+}
+
+.navbar__links {
+    display: flex;
+    gap: 2.5rem;
+    flex: 0 1 auto;
+    margin-right: auto; /* Isso empurra os links para a esquerda */
+    margin-left: 20px; /* Adiciona um espaço entre a logo e os links */
+}
+
+.navbar__link {
+    display: flex;
+    color: var(--blue-principal);
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+    align-items: center;
+}
+
+.navbar__link:hover {
+    color: var(--blue-hover);
+}
+
+.button__logout {
+    background-image: url("/icons/logout.png");
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .navbar__links {
+        display: none;
+    }
+    
+    .navbar__container {
+        justify-content: center;
+    }
+
+    .navbar__logo {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin-left: 37vw;
+    }
+    
+    .navbar__left {
+        position: absolute;
+        left: 1rem;
+    }
+    
+    .button__logout {
+        position: absolute;
+        right: 1rem;
+    }
+}
